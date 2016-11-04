@@ -1,8 +1,6 @@
 package engine;
 
-import java.awt.Canvas;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 import game.Game;
@@ -19,6 +17,7 @@ public class Program extends Canvas implements Runnable
 	
 	public Program()
 	{
+		System.setProperty("sun.java2d.opengl", "true");
 		game = new Game();
 		new Window(WIDTH, HEIGHT, "Maze", this);
 	}
@@ -74,6 +73,7 @@ public class Program extends Canvas implements Runnable
 	@Override
 	public void run() 
 	{
+		Toolkit.getDefaultToolkit().sync();
 		requestFocus();
 		
 		long lastTime = System.nanoTime();
@@ -102,7 +102,7 @@ public class Program extends Canvas implements Runnable
 			if(System.currentTimeMillis() - timer > 1000)
 			{
 				timer += 1000;
-				//System.out.println("FPS: " + frames + " TICKS: " + updates);
+				System.out.println("FPS: " + frames + " TICKS: " + updates);
 				frames = 0;
 				updates = 0;
 			}
