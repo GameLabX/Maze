@@ -13,8 +13,6 @@ public class Hero extends GameObject
 {
     private final float width = 32;
     private final float height = 32;
-    private float velX = 0;
-    private float velY = 0;
 
     public Hero(float x, float y)
     {
