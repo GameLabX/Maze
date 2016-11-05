@@ -18,7 +18,7 @@ public class Program extends Canvas implements Runnable
 	public Program()
 	{
 		System.setProperty("sun.java2d.opengl", "true");
-		game = new Game();
+		game = new Game(Color.black);
 		new Window(WIDTH, HEIGHT, "Maze", this);
 	}
 	
@@ -102,7 +102,7 @@ public class Program extends Canvas implements Runnable
 			if(System.currentTimeMillis() - timer > 1000)
 			{
 				timer += 1000;
-				System.out.println("FPS: " + frames + " TICKS: " + updates);
+				//System.out.println("FPS: " + frames + " TICKS: " + updates);
 				frames = 0;
 				updates = 0;
 			}
