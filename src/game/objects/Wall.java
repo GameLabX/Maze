@@ -1,6 +1,7 @@
 package game.objects;
 
 import game.GameObject;
+import game.ObjectType;
 
 import java.awt.*;
 
@@ -12,7 +13,7 @@ public class Wall extends GameObject {
     public static final float height = 32;
 
     public Wall(float x, float y) {
-        super(x, y, 0, 0); // da'l ubaciti i brzinu u zidove, da budu pokretni ho ho
+        super(x, y, 0, 0, ObjectType.Wall); // da'l ubaciti i brzinu u zidove, da budu pokretni ho ho
     }
 
     @Override

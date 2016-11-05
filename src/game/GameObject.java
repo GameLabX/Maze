@@ -9,14 +9,15 @@ public abstract class GameObject
 {
     protected float x = 0.0f, y = 0.0f;             // X, Y koordinate
     protected float velX = 0.0f, velY = 0.0f;       // brzina kretanja po X,Y koordinati
+    protected ObjectType objectType;
 
-
-    public GameObject(float x, float y, float velX, float velY)
+    public GameObject(float x, float y, float velX, float velY, ObjectType objectType)
     {
         this.x = x;
         this.y = y;
         this.velX = velX;
         this.velY = velY;
+        this.objectType = objectType;
     }
 
     public abstract void tick();
@@ -47,6 +48,8 @@ public abstract class GameObject
     {
         return velY;
     }
+
+    public ObjectType getObjectType() { return objectType; }
 
     // Setters
     public void setX(float x)

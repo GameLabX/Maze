@@ -2,6 +2,7 @@ package game.objects;
 
 import engine.Program;
 import game.GameObject;
+import game.ObjectType;
 
 import java.awt.*;
 
@@ -15,7 +16,7 @@ public class Hero extends GameObject
 
     public Hero(float x, float y, float width, float height, float velX, float velY)
     {
-        super(x, y, velX, velY);
+        super(x, y, velX, velY, ObjectType.Hero);
         this.width = width;
         this.height = height;
     }
