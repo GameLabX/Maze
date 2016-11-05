@@ -24,7 +24,7 @@ public class Game {
     {
         this.backgroundColor = backgroundColor;
 
-        hero = new Hero(100, 100, 64, 64);
+        hero = new Hero(100, 100);
         objects.add(hero);
 
         initMap(10, 1);

@@ -11,38 +11,40 @@ import java.awt.*;
  */
 public class Hero extends GameObject
 {
-    private float width;
-    private float height;
+    private final float width = 32;
+    private final float height = 32;
+    private float velX = 0;
+    private float velY = 0;
 
-    public Hero(float x, float y, float width, float height, float velX, float velY)
+    public Hero(float x, float y)
     {
-        super(x, y, velX, velY, ObjectType.Hero);
-        this.width = width;
-        this.height = height;
+        super(x, y, 0, 0, ObjectType.Hero);
     }
 
-
+    // Cemu ovo sluzi ?
+    /*
     public Hero(float x, float y, float width, float height)
     {
         this(x, y, width, height, 0, 0);
     }
-
+    */
     public float getWidth() {
         return width;
     }
 
+    /* Nepotrebno
     public void setWidth(float width) {
         this.width = width;
     }
-
+    */
     public float getHeight() {
         return height;
     }
-
+    /* Nepotrebno
     public void setHeight(float height) {
         this.height = height;
     }
-
+    */
     @Override
     public void tick() {
 
@@ -50,9 +52,6 @@ public class Hero extends GameObject
 
     @Override
     public void render(Graphics g) {
-        //g.setColor(Color.BLACK);
-        //g.fillRect(0, 0, Program.WIDTH, Program.HEIGHT);
-
         g.setColor(Color.white);
         ///g.setFont(new Font("Arial black", 1, 32));
         g.fillRect((int)x, (int)y, (int)width, (int)height);
