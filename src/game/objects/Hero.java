@@ -59,7 +59,7 @@ public class Hero extends GameObject
 
     @Override
     public Rectangle getBounds() {
-        return null;
+        return new Rectangle((int)x, (int)y, (int)width, (int)height);
     }
 
     @Override
