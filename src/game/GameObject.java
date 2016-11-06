@@ -34,7 +34,7 @@ public abstract class GameObject
         return x;
     }
 
-    public float geY()
+    public float getY()
     {
         return y;
     }
