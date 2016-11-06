@@ -57,6 +57,14 @@ public class Hero extends GameObject
         g.setColor(Color.white);
         ///g.setFont(new Font("Arial black", 1, 32));
         g.fillRect((int)x, (int)y, (int)width, (int)height);
+
+        // Za debagovanje getboundsa
+        Graphics2D g2d = (Graphics2D)g;
+        g.setColor(Color.BLUE);
+        g2d.draw(getBottomBounds());
+        g2d.draw(getLeftBounds());
+        g2d.draw(getRightBounds());
+        g2d.draw(getTopBounds());
     }
 
     @Override
@@ -66,21 +74,21 @@ public class Hero extends GameObject
 
     @Override
     public Rectangle getTopBounds() {
-        return null;
+        return new Rectangle((int)x + 5, (int)y, 22, 10);
     }
 
     @Override
     public Rectangle getBottomBounds() {
-        return null;
+        return new Rectangle((int)x + 5, (int)(y + height - 10), 22, 10);
     }
 
     @Override
     public Rectangle getLeftBounds() {
-        return null;
+        return new Rectangle((int)x, (int)y + 5, 10, 22);
     }
 
     @Override
     public Rectangle getRightBounds() {
-        return null;
+        return new Rectangle((int)(x + width - 10), (int)y + 5, 10, 22);
     }
 }
