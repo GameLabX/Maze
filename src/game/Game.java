@@ -1,5 +1,6 @@
 package game;
 
+import engine.CollisionHandler;
 import engine.Program;
 import game.objects.Hero;
 import game.objects.Wall;
@@ -20,12 +21,16 @@ public class Game {
 
     private Hero hero;
 
+    private CollisionHandler collisionHandler;
+
     public Game(Color backgroundColor)
     {
         this.backgroundColor = backgroundColor;
 
         hero = new Hero(100, 100);
         objects.add(hero);
+
+        collisionHandler = new CollisionHandler();
 
         initMap(10, 1);
     }
@@ -42,12 +47,17 @@ public class Game {
                 objects.add(map[i][j]); // -> nego direkt dodavanje novog zida u objekte!?
             }
         }
+
+        // Za debagovanje getbounds i kolizije
+        objects.add(new Wall(5*Wall.width, 5*Wall.height));
     }
 
     public void tick()
     {
         for (GameObject object : objects)
             object.tick();
+
+        collisionHandler.tick(objects);
     }
 
 
