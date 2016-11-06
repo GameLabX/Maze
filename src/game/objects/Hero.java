@@ -14,6 +14,7 @@ public class Hero extends GameObject
     private final float width = 32;
     private final float height = 32;
 
+
     public Hero(float x, float y)
     {
         super(x, y, 0, 0, ObjectType.Hero);
@@ -45,7 +46,10 @@ public class Hero extends GameObject
     */
     @Override
     public void tick() {
+        x += velX;
+        y += velY;
 
+        // u zavisnosti od tla, MAX brzina varira
     }
 
     @Override

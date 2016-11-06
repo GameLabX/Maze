@@ -46,8 +46,8 @@ public class Game {
 
     public void tick()
     {
-        /*for (GameObject object : objects)
-            object.tick();*/
+        for (GameObject object : objects)
+            object.tick();
     }
 
 
@@ -61,6 +61,9 @@ public class Game {
     }
 
 
+    public Hero getHero() {
+        return hero;
+    }
     /*public void addGameObject(GameObject gameObject)
     {
         objects.add(gameObject);

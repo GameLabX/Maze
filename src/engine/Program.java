@@ -20,6 +20,7 @@ public class Program extends Canvas implements Runnable
 		System.setProperty("sun.java2d.opengl", "true");
 		game = new Game(Color.black);
 		new Window(WIDTH, HEIGHT, "Maze", this);
+		this.addKeyListener(new KeyInput(game));
 	}
 	
 	public void tick()
