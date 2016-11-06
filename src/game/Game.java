@@ -30,7 +30,7 @@ public class Game {
         hero = new Hero(100, 100);
         objects.add(hero);
 
-        collisionHandler = new CollisionHandler();
+        collisionHandler = new CollisionHandler(this);
 
         initMap(10, 1);
     }

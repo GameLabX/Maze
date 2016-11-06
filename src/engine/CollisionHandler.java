@@ -1,5 +1,6 @@
 package engine;
 
+import game.Game;
 import game.GameObject;
 import game.ObjectType;
 import game.objects.Hero;
@@ -12,13 +13,19 @@ import java.util.LinkedList;
  */
 public class CollisionHandler
 {
+    private Game game;
     private Hero hero;
     private Wall wall;
+
+    public CollisionHandler(Game game)
+    {
+        this.game = game;
+        this.hero = game.getHero();
+    }
 
     public void tick(LinkedList<GameObject> objects)
     {
         // Kolizija izmedju zidova i hero-a
-        hero = findHeroInList(objects);
 
         for (int i = 0; i < objects.size(); ++i)
         {
@@ -50,4 +57,5 @@ public class CollisionHandler
 
         return null;
     }
+
 }
