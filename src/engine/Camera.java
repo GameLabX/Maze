@@ -18,6 +18,7 @@ public class Camera
 
 
     public void tick(GameObject player) {
+        // blin
         x = -player.getX() + Program.WIDTH/2;
         y = -player.getY() + Program.HEIGHT/2;
     }

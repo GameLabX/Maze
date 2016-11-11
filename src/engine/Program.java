@@ -1,6 +1,7 @@
 package engine;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferStrategy;
 
 import game.Game;
@@ -44,7 +45,7 @@ public class Program extends Canvas implements Runnable
 		Graphics g = bs.getDrawGraphics();
 		Graphics2D g2d = (Graphics2D)g;
         // zbog kamere, pozadinu mora crtati ovde
-        g.setColor(Color.BLACK);
+        g.setColor(Color.RED);
         g.fillRect(0, 0, Program.WIDTH, Program.HEIGHT);
 
         g2d.translate(camera.getX(), camera.getY());
