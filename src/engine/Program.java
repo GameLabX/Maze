@@ -14,11 +14,13 @@ public class Program extends Canvas implements Runnable
 	private Thread thread;
 	
 	private Game game;
+	private Camera camera;
 	
 	public Program()
 	{
 		System.setProperty("sun.java2d.opengl", "true");
-		game = new Game(Color.black);
+		game = new Game();
+		camera = new Camera(0,0);
 		new Window(WIDTH, HEIGHT, "Maze", this);
 		this.addKeyListener(new KeyInput(game));
 	}
@@ -26,6 +28,7 @@ public class Program extends Canvas implements Runnable
 	public void tick()
 	{
 		game.tick();
+		camera.tick(game.getHero());
 	}
 	
 	public void render()
@@ -40,8 +43,15 @@ public class Program extends Canvas implements Runnable
 		
 		Graphics g = bs.getDrawGraphics();
 		Graphics2D g2d = (Graphics2D)g;
+        // zbog kamere, pozadinu mora crtati ovde
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, Program.WIDTH, Program.HEIGHT);
+
+        g2d.translate(camera.getX(), camera.getY());
 		
 		game.render(g);
+
+        g2d.translate(-camera.getX(), -camera.getY());
 		
 		g2d.dispose();
 		g.dispose();

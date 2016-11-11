@@ -17,15 +17,12 @@ public class Game {
 
     private GameObject[][] map;
 
-    private Color backgroundColor;
-
     private Hero hero;
 
     private CollisionHandler collisionHandler;
 
-    public Game(Color backgroundColor)
+    public Game()
     {
-        this.backgroundColor = backgroundColor;
 
         hero = new Hero(100, 100);
         objects.add(hero);
@@ -62,9 +59,6 @@ public class Game {
 
 
     public void render(Graphics g) {
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, Program.WIDTH, Program.HEIGHT);
-
         for (GameObject object : objects) {
             object.render(g);
         }

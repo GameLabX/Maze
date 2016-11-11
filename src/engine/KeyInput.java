@@ -12,6 +12,7 @@ import java.awt.event.KeyEvent;
 public class KeyInput extends KeyAdapter
 {
     Game game;
+    Integer key;
 
     public KeyInput(Game g)
     {
@@ -21,7 +22,7 @@ public class KeyInput extends KeyAdapter
 
     public void keyPressed(KeyEvent e)
     {
-        int key = e.getKeyCode();
+        key = e.getKeyCode();
         Hero hero = game.getHero();
 
         if (key == KeyEvent.VK_LEFT) hero.setVelX(-5);
@@ -33,12 +34,14 @@ public class KeyInput extends KeyAdapter
 
     public void keyReleased(KeyEvent e)
     {
-        int key = e.getKeyCode();
+        key = e.getKeyCode();
         Hero hero = game.getHero();
 
         if (key == KeyEvent.VK_LEFT) hero.setVelX(0);
         if (key == KeyEvent.VK_RIGHT) hero.setVelX(0);
         if (key == KeyEvent.VK_UP) hero.setVelY(0);
         if (key == KeyEvent.VK_DOWN) hero.setVelY(0);
+
+        key = null;
     }
 }
